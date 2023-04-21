@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tweet-cards-test-project/static/css/main.c3d5249d.css",
+    "main.js": "/tweet-cards-test-project/static/js/main.76e85a67.js",
+    "index.html": "/tweet-cards-test-project/index.html",
+    "main.c3d5249d.css.map": "/tweet-cards-test-project/static/css/main.c3d5249d.css.map",
+    "main.76e85a67.js.map": "/tweet-cards-test-project/static/js/main.76e85a67.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3d5249d.css",
+    "static/js/main.76e85a67.js"
+  ]
+}
