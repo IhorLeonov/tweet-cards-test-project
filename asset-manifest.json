@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tweet-cards-test-project/static/css/main.c3d5249d.css",
-    "main.js": "/tweet-cards-test-project/static/js/main.ee108013.js",
+    "main.js": "/tweet-cards-test-project/static/js/main.2f5f93fd.js",
     "static/js/690.8123fc67.chunk.js": "/tweet-cards-test-project/static/js/690.8123fc67.chunk.js",
-    "static/js/822.9d61c774.chunk.js": "/tweet-cards-test-project/static/js/822.9d61c774.chunk.js",
+    "static/js/702.b20d9d1e.chunk.js": "/tweet-cards-test-project/static/js/702.b20d9d1e.chunk.js",
     "index.html": "/tweet-cards-test-project/index.html",
     "main.c3d5249d.css.map": "/tweet-cards-test-project/static/css/main.c3d5249d.css.map",
-    "main.ee108013.js.map": "/tweet-cards-test-project/static/js/main.ee108013.js.map",
+    "main.2f5f93fd.js.map": "/tweet-cards-test-project/static/js/main.2f5f93fd.js.map",
     "690.8123fc67.chunk.js.map": "/tweet-cards-test-project/static/js/690.8123fc67.chunk.js.map",
-    "822.9d61c774.chunk.js.map": "/tweet-cards-test-project/static/js/822.9d61c774.chunk.js.map"
+    "702.b20d9d1e.chunk.js.map": "/tweet-cards-test-project/static/js/702.b20d9d1e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.ee108013.js"
+    "static/js/main.2f5f93fd.js"
   ]
 }
