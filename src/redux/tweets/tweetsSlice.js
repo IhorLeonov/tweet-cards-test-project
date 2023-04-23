@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchTweetCards } from 'redux/tweets/operations';
+import { fetchTweetCards, changeFollowers } from 'redux/tweets/operations';
 
 const tweetsSlice = createSlice({
   name: 'tweets',
@@ -10,7 +10,7 @@ const tweetsSlice = createSlice({
     subscriptions: [],
   },
   reducers: {
-    toggleFollow: (state, action) => {
+    handleSubscribing: (state, action) => {
       if (state.subscriptions.includes(action.payload)) {
         state.subscriptions = state.subscriptions.filter(
           id => id !== action.payload
@@ -25,12 +25,24 @@ const tweetsSlice = createSlice({
       .addCase(fetchTweetCards.pending, state => {
         state.isLoading = true;
       })
+      .addCase(changeFollowers.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(fetchTweetCards.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.cards = action.payload;
       })
+      .addCase(changeFollowers.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+      })
       .addCase(fetchTweetCards.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        console.log(action.payload);
+      })
+      .addCase(changeFollowers.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
         console.log(action.payload);
@@ -38,4 +50,4 @@ const tweetsSlice = createSlice({
 });
 
 export const tweetsReducer = tweetsSlice.reducer;
-export const { toggleFollow } = tweetsSlice.actions;
+export const { handleSubscribing } = tweetsSlice.actions;

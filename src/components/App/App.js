@@ -1,9 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
-import { lazy } from 'react';
-
+import { lazy, useEffect } from 'react';
 import { fetchTweetCards } from 'redux/tweets/operations';
-import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 const Home = lazy(() => import('pages/Home/HomePage'));

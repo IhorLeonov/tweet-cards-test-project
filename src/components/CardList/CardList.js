@@ -8,7 +8,7 @@ export const CardList = () => {
   return (
     <ul>
       {cards.map(({ id, ...otherProps }) => (
-        <Card key={id} id={id} otherProps={otherProps} />
+        <Card key={id} id={id} props={otherProps} />
       ))}
     </ul>
   );

@@ -14,3 +14,15 @@ export const fetchTweetCards = createAsyncThunk(
     }
   }
 );
+
+export const changeFollowers = createAsyncThunk(
+  'cards/changeFollowers',
+  async (obj, thunkAPI) => {
+    try {
+      const response = await axios.put(`/cards/${obj.id}`, obj);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
