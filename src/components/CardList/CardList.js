@@ -1,13 +1,13 @@
 import { Card } from 'components/Card/Card';
 import { useSelector } from 'react-redux';
-import { selectCards } from 'redux/tweets/selectors';
+import { selectTweets } from 'redux/tweets/selectors';
 
 export const CardList = () => {
-  const cards = useSelector(selectCards);
+  const tweets = useSelector(selectTweets);
 
   return (
     <ul>
-      {cards.map(({ id, ...otherProps }) => (
+      {tweets.map(({ id, ...otherProps }) => (
         <Card key={id} id={id} props={otherProps} />
       ))}
     </ul>

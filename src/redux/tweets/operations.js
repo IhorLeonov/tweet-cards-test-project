@@ -7,7 +7,7 @@ export const fetchTweetCards = createAsyncThunk(
   'cards/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/cards');
+      const response = await axios.get('/tweets');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -19,7 +19,7 @@ export const changeFollowers = createAsyncThunk(
   'cards/changeFollowers',
   async (obj, thunkAPI) => {
     try {
-      const response = await axios.put(`/cards/${obj.id}`, obj);
+      const response = await axios.put(`/tweets/${obj.id}`, obj);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

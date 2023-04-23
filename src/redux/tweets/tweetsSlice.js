@@ -4,7 +4,7 @@ import { fetchTweetCards, changeFollowers } from 'redux/tweets/operations';
 const tweetsSlice = createSlice({
   name: 'tweets',
   initialState: {
-    cards: [],
+    tweets: [],
     isLoading: false,
     error: null,
     subscriptions: [],
@@ -33,7 +33,7 @@ const tweetsSlice = createSlice({
       .addCase(fetchTweetCards.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.cards = action.payload;
+        state.tweets = action.payload;
         state.isFatching = false;
       })
       .addCase(changeFollowers.fulfilled, (state, action) => {
