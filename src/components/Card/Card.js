@@ -3,9 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectSubscriptions } from 'redux/tweets/selectors';
 import { useState } from 'react';
 import { changeFollowers } from 'redux/tweets/operations';
+import {
+  CardBox,
+  Rectangle,
+  PartTop,
+  PartBottom,
+  Tweets,
+  Followers,
+  Button,
+} from './Card.styled';
 
 export const Card = ({ id, props }) => {
-  const { user, tweets, followers } = props;
+  const { tweets, followers } = props;
   const [value, setValue] = useState(followers);
 
   const dispatch = useDispatch();
@@ -24,16 +33,18 @@ export const Card = ({ id, props }) => {
   };
 
   return (
-    <li>
-      <div>
+    <CardBox>
+      <PartTop>
         <img src="" alt="" />
-      </div>
-      <p>user: {user}</p>
-      <p>tweets: {tweets}</p>
-      <p>followers: {value}</p>
-      <button type="button" onClick={handleClick}>
-        {isSubscribe ? 'FOLLOWING' : 'FOLLOW'}
-      </button>
-    </li>
+      </PartTop>
+      <Rectangle></Rectangle>
+      <PartBottom>
+        <Tweets>{tweets} Tweets</Tweets>
+        <Followers>{value} Followers</Followers>
+        <Button type="button" onClick={handleClick} isSubscribe={isSubscribe}>
+          {isSubscribe ? 'FOLLOWING' : 'FOLLOW'}
+        </Button>
+      </PartBottom>
+    </CardBox>
   );
 };
