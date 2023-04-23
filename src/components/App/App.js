@@ -18,16 +18,14 @@ export const App = () => {
   }, [dispatch]);
 
   return isFatching ? (
-    <b>Refreshing user data...</b>
+    <b>Fatching data...</b>
   ) : (
-    <div>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/tweets" element={<TweetsPage />} />
-        </Route>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/tweets" element={<TweetsPage />} />
         <Route path="*" element={<Home />} />
-      </Routes>
-    </div>
+      </Route>
+    </Routes>
   );
 };
