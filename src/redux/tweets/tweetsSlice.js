@@ -8,6 +8,7 @@ const tweetsSlice = createSlice({
     isLoading: false,
     error: null,
     subscriptions: [],
+    isFatching: false,
   },
   reducers: {
     handleSubscribing: (state, action) => {
@@ -24,6 +25,7 @@ const tweetsSlice = createSlice({
     builder
       .addCase(fetchTweetCards.pending, state => {
         state.isLoading = true;
+        state.isFatching = true;
       })
       .addCase(changeFollowers.pending, state => {
         state.isLoading = true;
@@ -32,6 +34,7 @@ const tweetsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.cards = action.payload;
+        state.isFatching = false;
       })
       .addCase(changeFollowers.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -40,6 +43,8 @@ const tweetsSlice = createSlice({
       .addCase(fetchTweetCards.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        state.isFatching = false;
+
         console.log(action.payload);
       })
       .addCase(changeFollowers.rejected, (state, action) => {
