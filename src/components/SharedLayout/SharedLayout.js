@@ -6,14 +6,16 @@ import { AppBar } from 'components/AppBar/AppBar';
 
 export const SharedLayout = () => {
   return (
-    <Container>
+    <>
       <AppBar />
-      {/* <main> */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
-      {/* </main> */}
+      <Container>
+        {/* <main> */}
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+        {/* </main> */}
+      </Container>
       <GlobalStyle />
-    </Container>
+    </>
   );
 };

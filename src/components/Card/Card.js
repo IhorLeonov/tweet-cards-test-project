@@ -3,9 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectSubscriptions } from 'redux/tweets/selectors';
 import { useState } from 'react';
 import { changeFollowers } from 'redux/tweets/operations';
+import { BoySvg, LogoSvg } from 'images/SvgImges';
+
 import {
   CardBox,
-  Rectangle,
+  UserPhotoWrapper,
+  Backdrop,
+  UserPhoto,
   PartTop,
   PartBottom,
   Tweets,
@@ -14,7 +18,7 @@ import {
 } from './Card.styled';
 
 export const Card = ({ id, props }) => {
-  const { tweets, followers } = props;
+  const { avatar, tweets, followers } = props;
   const [value, setValue] = useState(followers);
 
   const dispatch = useDispatch();
@@ -35,9 +39,15 @@ export const Card = ({ id, props }) => {
   return (
     <CardBox>
       <PartTop>
-        <img src="" alt="" />
+        <LogoSvg />
       </PartTop>
-      <Rectangle></Rectangle>
+
+      <UserPhotoWrapper>
+        <Backdrop>
+          {avatar ? <UserPhoto src={avatar} alt="User photo" /> : <BoySvg />}
+        </Backdrop>
+      </UserPhotoWrapper>
+
       <PartBottom>
         <Tweets>{tweets} Tweets</Tweets>
         <Followers>{value} Followers</Followers>

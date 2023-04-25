@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import decoration from 'images/decoration.png';
 
 export const CardBox = styled.li`
+  position: relative;
   width: 380px;
   height: 460px;
-  margin-bottom: 20px;
 
   background: linear-gradient(
     114.99deg,
@@ -16,21 +17,68 @@ export const CardBox = styled.li`
 `;
 
 export const PartTop = styled.div`
-  height: 214px;
+  background-image: url(${decoration});
+  background-repeat: no-repeat;
+  background-size: 308px 168px;
+  background-position: 36px 28px;
+  height: 222px;
+
+  &:after {
+    position: absolute;
+    top: 214px;
+    left: 0;
+    content: '';
+
+    background: #ebd8ff;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+      inset 0px -1.71846px 3.43693px #ae7be3,
+      inset 0px 3.43693px 2.5777px #fbf8ff;
+
+    min-width: 380px;
+    height: 8px;
+  }
 `;
 
-export const Rectangle = styled.div`
-  width: 380px;
-  height: 8px;
+export const UserPhotoWrapper = styled.div`
+  position: absolute;
+  left: 150px;
+  top: 178px;
+`;
 
-  background: #ebd8ff;
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
-    inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
+export const Backdrop = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #5736a3;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+
+    border: 8.5px solid #ebd8ff;
+    border-radius: 100px;
+    height: 80px;
+    width: 80px;
+  }
+`;
+
+export const UserPhoto = styled.img`
+  position: absolute;
+  left: 8.5px;
+  top: 8.5px;
+  border-radius: 50%;
+  width: 63px;
+  height: 63px;
 `;
 
 export const PartBottom = styled.div`
   text-align: center;
-  /* height: 238px; */
 `;
 
 const Paragraph = styled.p`
