@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectSubscriptions } from 'redux/tweets/selectors';
 import { useState } from 'react';
 import { changeFollowers } from 'redux/tweets/operations';
-import { BoySvg, LogoSvg } from 'images/SvgImges';
+import { LogoSvg } from 'images/SvgImages';
+import boy from 'images/boy.png';
 
 import {
   CardBox,
@@ -15,6 +16,7 @@ import {
   Tweets,
   Followers,
   Button,
+  DefaultPhoto,
 } from './Card.styled';
 
 export const Card = ({ id, props }) => {
@@ -36,6 +38,9 @@ export const Card = ({ id, props }) => {
     dispatch(changeFollowers({ followers: value - 1, id }));
   };
 
+  const formatedTweets = new Intl.NumberFormat('en-US').format(tweets);
+  const formatedValue = new Intl.NumberFormat('en-US').format(value);
+
   return (
     <CardBox>
       <PartTop>
@@ -44,13 +49,19 @@ export const Card = ({ id, props }) => {
 
       <UserPhotoWrapper>
         <Backdrop>
-          {avatar ? <UserPhoto src={avatar} alt="User photo" /> : <BoySvg />}
+          {avatar ? (
+            <UserPhoto src={avatar} alt="User photo" />
+          ) : (
+            <DefaultPhoto>
+              <UserPhoto src={boy} alt="User photo" />
+            </DefaultPhoto>
+          )}
         </Backdrop>
       </UserPhotoWrapper>
 
       <PartBottom>
-        <Tweets>{tweets} Tweets</Tweets>
-        <Followers>{value} Followers</Followers>
+        <Tweets>{formatedTweets} Tweets</Tweets>
+        <Followers>{formatedValue} Followers</Followers>
         <Button type="button" onClick={handleClick} isSubscribe={isSubscribe}>
           {isSubscribe ? 'FOLLOWING' : 'FOLLOW'}
         </Button>
