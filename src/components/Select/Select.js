@@ -10,7 +10,7 @@ const options = [
   { value: 'followings', label: 'Followings' },
 ];
 
-export const SelectComponent = () => {
+export const SelectFilter = () => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const dispatch = useDispatch();
   const tweets = useSelector(selectTweets);
