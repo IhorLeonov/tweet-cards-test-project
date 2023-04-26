@@ -21,7 +21,7 @@ import {
 
 export const Card = ({ id, props }) => {
   const { avatar, tweets, followers } = props;
-  const [value, setValue] = useState(followers);
+  const [followersValue, setFollowersValue] = useState(followers);
 
   const dispatch = useDispatch();
   const subscriptions = useSelector(selectSubscriptions);
@@ -30,16 +30,18 @@ export const Card = ({ id, props }) => {
   const handleClick = () => {
     dispatch(handleSubscribing(id));
     if (!isSubscribe) {
-      setValue(value + 1);
-      dispatch(changeFollowers({ followers: value + 1, id }));
+      setFollowersValue(followersValue + 1);
+      dispatch(changeFollowers({ followers: followersValue + 1, id }));
       return;
     }
-    setValue(value - 1);
-    dispatch(changeFollowers({ followers: value - 1, id }));
+    setFollowersValue(followersValue - 1);
+    dispatch(changeFollowers({ followers: followersValue - 1, id }));
   };
 
   const formatedTweets = new Intl.NumberFormat('en-US').format(tweets);
-  const formatedValue = new Intl.NumberFormat('en-US').format(value);
+  const formatedFollowersValue = new Intl.NumberFormat('en-US').format(
+    followersValue
+  );
 
   return (
     <CardBox>
@@ -61,7 +63,7 @@ export const Card = ({ id, props }) => {
 
       <PartBottom>
         <Tweets>{formatedTweets} Tweets</Tweets>
-        <Followers>{formatedValue} Followers</Followers>
+        <Followers>{formatedFollowersValue} Followers</Followers>
         <Button type="button" onClick={handleClick} isSubscribe={isSubscribe}>
           {isSubscribe ? 'FOLLOWING' : 'FOLLOW'}
         </Button>

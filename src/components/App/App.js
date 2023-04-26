@@ -2,24 +2,30 @@ import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import { lazy, useEffect } from 'react';
 import { fetchTweetCards } from 'redux/tweets/operations';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { selectIsFatching } from 'redux/tweets/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectPage } from 'redux/tweets/selectors';
+// import { selectIsFatching } from 'redux/tweets/selectors';
 
 const Home = lazy(() => import('pages/Home/HomePage'));
 const TweetsPage = lazy(() => import('pages/Tweets/TweetsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isFatching = useSelector(selectIsFatching);
+  // const isFatching = useSelector(selectIsFatching);
+  const page = useSelector(selectPage);
 
   useEffect(() => {
-    dispatch(fetchTweetCards());
+    const abortController = new AbortController();
+    const abortOption = {
+      signal: abortController.signal,
+    };
+    const quaryOptions = { page, abortOption };
+    dispatch(fetchTweetCards(quaryOptions));
+    return () => abortController.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
-  return isFatching ? (
-    <b>Fatching data...</b>
-  ) : (
+  return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />

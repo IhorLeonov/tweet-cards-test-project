@@ -1,11 +1,39 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchTweetCards } from 'redux/tweets/operations';
+import {
+  selectSubscriptions,
+  selectPage,
+  selectIsLoading,
+} from 'redux/tweets/selectors';
+
 import { CardList } from 'components/CardList/CardList';
-import { Tools, BackButton, Info, Wrap } from './TweetsPage.styled';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
-import { useSelector } from 'react-redux';
-import { selectSubscriptions } from 'redux/tweets/selectors';
+import { FiPlus } from 'react-icons/fi';
+import { handleSroll } from 'services';
+
+import {
+  Tools,
+  BackButton,
+  Info,
+  Wrap,
+  LoadMoreBtn,
+} from './TweetsPage.styled';
 
 const TweetsPage = () => {
   const following = useSelector(selectSubscriptions);
+  const dispatch = useDispatch();
+  const page = useSelector(selectPage);
+  const isLoading = useSelector(selectIsLoading);
+
+  const handleLoadMore = () => {
+    dispatch(
+      fetchTweetCards({
+        page,
+      })
+    );
+
+    handleSroll();
+  };
 
   return (
     <>
@@ -13,13 +41,23 @@ const TweetsPage = () => {
         <BackButton to="/">
           {<MdOutlineArrowBackIosNew style={{ marginRight: 10 }} />}Back
         </BackButton>
-        {following.length > 0 && (
-          <Info>
-            <Wrap>{following.length}</Wrap> Following
-          </Info>
-        )}
+
+        <Info>
+          <Wrap>{following.length}</Wrap> Following
+        </Info>
       </Tools>
+
       <CardList />
+
+      {page > 1 && (
+        <LoadMoreBtn
+          disabled={isLoading}
+          type="button"
+          onClick={handleLoadMore}
+        >
+          <FiPlus style={{ marginRight: 10 }} /> Load more
+        </LoadMoreBtn>
+      )}
     </>
   );
 };

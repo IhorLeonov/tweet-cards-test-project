@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import decoration from 'images/decoration.png';
+import { Button as Btn } from 'constants/GlobalStyle';
 
 export const CardBox = styled.li`
   position: relative;
@@ -113,28 +114,11 @@ export const Followers = styled(Paragraph)`
   margin-top: 16px;
 `;
 
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 28px;
-  margin-left: auto;
-  margin-right: auto;
+export const Button = styled(Btn)`
   margin-top: 26px;
-
   width: 196px;
   height: 50px;
-
-  border: none;
-  background: ${props => (props.isSubscribe ? '#5CD3A8' : '#EBD8FF')};
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-  border-radius: 10.3108px;
-
   font-weight: 600;
   font-size: 18px;
-  line-height: 22px;
-  text-transform: uppercase;
-
-  color: #373737;
-  cursor: pointer;
+  background: ${props => (props.isSubscribe ? '#5CD3A8' : '#EBD8FF')};
 `;
