@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/tweet-cards-test-project/static/css/main.c3d5249d.css",
-    "main.js": "/tweet-cards-test-project/static/js/main.a00ab681.js",
-    "static/js/690.8123fc67.chunk.js": "/tweet-cards-test-project/static/js/690.8123fc67.chunk.js",
-    "static/js/729.c950cc06.chunk.js": "/tweet-cards-test-project/static/js/729.c950cc06.chunk.js",
-    "static/js/980.59cd9a1f.chunk.js": "/tweet-cards-test-project/static/js/980.59cd9a1f.chunk.js",
+    "main.js": "/tweet-cards-test-project/static/js/main.17f625be.js",
+    "static/js/957.327b69ff.chunk.js": "/tweet-cards-test-project/static/js/957.327b69ff.chunk.js",
+    "static/js/646.329373d7.chunk.js": "/tweet-cards-test-project/static/js/646.329373d7.chunk.js",
+    "static/js/486.5d744df1.chunk.js": "/tweet-cards-test-project/static/js/486.5d744df1.chunk.js",
     "static/media/decoration.png": "/tweet-cards-test-project/static/media/decoration.9af90d2c6bbc12d55778.png",
     "static/media/boy.png": "/tweet-cards-test-project/static/media/boy.47318ba467222b578ba4.png",
     "static/media/logo.svg": "/tweet-cards-test-project/static/media/logo.beb81b2e37fe9759dd0907f1fb695e22.svg",
     "index.html": "/tweet-cards-test-project/index.html",
     "main.c3d5249d.css.map": "/tweet-cards-test-project/static/css/main.c3d5249d.css.map",
-    "main.a00ab681.js.map": "/tweet-cards-test-project/static/js/main.a00ab681.js.map",
-    "690.8123fc67.chunk.js.map": "/tweet-cards-test-project/static/js/690.8123fc67.chunk.js.map",
-    "729.c950cc06.chunk.js.map": "/tweet-cards-test-project/static/js/729.c950cc06.chunk.js.map",
-    "980.59cd9a1f.chunk.js.map": "/tweet-cards-test-project/static/js/980.59cd9a1f.chunk.js.map"
+    "main.17f625be.js.map": "/tweet-cards-test-project/static/js/main.17f625be.js.map",
+    "957.327b69ff.chunk.js.map": "/tweet-cards-test-project/static/js/957.327b69ff.chunk.js.map",
+    "646.329373d7.chunk.js.map": "/tweet-cards-test-project/static/js/646.329373d7.chunk.js.map",
+    "486.5d744df1.chunk.js.map": "/tweet-cards-test-project/static/js/486.5d744df1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.a00ab681.js"
+    "static/js/main.17f625be.js"
   ]
 }
