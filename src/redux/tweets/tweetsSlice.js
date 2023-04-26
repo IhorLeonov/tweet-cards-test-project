@@ -9,9 +9,13 @@ const tweetsSlice = createSlice({
     error: null,
     subscriptions: [],
     isFatching: false,
+    filteredCards: [],
     page: 1,
   },
   reducers: {
+    changeFilter(state, action) {
+      state.filteredCards = action.payload;
+    },
     handleSubscribing: (state, action) => {
       if (state.subscriptions.includes(action.payload)) {
         state.subscriptions = state.subscriptions.filter(
@@ -56,4 +60,4 @@ const tweetsSlice = createSlice({
 });
 
 export const tweetsReducer = tweetsSlice.reducer;
-export const { handleSubscribing } = tweetsSlice.actions;
+export const { handleSubscribing, changeFilter } = tweetsSlice.actions;

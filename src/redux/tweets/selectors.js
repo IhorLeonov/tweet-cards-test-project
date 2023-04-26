@@ -4,3 +4,4 @@ export const selectError = state => state.tweets.error;
 export const selectSubscriptions = state => state.tweets.subscriptions;
 export const selectIsFatching = state => state.tweets.isFatching;
 export const selectPage = state => state.tweets.page;
+export const selectFilteredCards = state => state.tweets.filteredCards;

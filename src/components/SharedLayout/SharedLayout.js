@@ -10,7 +10,7 @@ export const SharedLayout = () => {
       <AppBar />
       <Container>
         {/* <main> */}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={null}>
           <Outlet />
         </Suspense>
         {/* </main> */}

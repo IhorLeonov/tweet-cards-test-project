@@ -7,6 +7,7 @@ import {
 } from 'redux/tweets/selectors';
 
 import { CardList } from 'components/CardList/CardList';
+import { SelectComponent } from 'components/Select/Select';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import { FiPlus } from 'react-icons/fi';
 import { handleSroll } from 'services';
@@ -41,6 +42,8 @@ const TweetsPage = () => {
         <BackButton to="/">
           {<MdOutlineArrowBackIosNew style={{ marginRight: 10 }} />}Back
         </BackButton>
+
+        <SelectComponent />
 
         <Info>
           <Wrap>{following.length}</Wrap> Following

@@ -5,14 +5,13 @@ import { Button } from 'constants/GlobalStyle';
 export const Tools = styled.span`
   margin-top: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
 export const BackButton = styled(Link)`
   display: flex;
   align-items: center;
-  margin-right: auto;
   padding: 15px;
   font-weight: 700;
   color: #471ca9;
@@ -23,7 +22,7 @@ export const BackButton = styled(Link)`
 `;
 
 export const Info = styled.div`
-  margin-right: 20px;
+  margin-right: 15px;
   font-weight: 700;
   color: #471ca9;
 `;
