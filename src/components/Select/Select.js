@@ -49,6 +49,12 @@ export const SelectFilter = () => {
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
+        styles={{
+          control: (baseStyles, state) => ({
+            ...baseStyles,
+            width: 150,
+          }),
+        }}
       />
     </div>
   );
