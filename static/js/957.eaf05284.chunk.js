@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktweet_cards_test_project=self.webpackChunktweet_cards_test_project||[]).push([[957],{1957:function(e,t,n){n.r(t),n.d(t,{default:function(){return u}});var r,c=n(1087),s=n(168),i=n(4313).ZP.div(r||(r=(0,s.Z)(["\n  text-align: center;\n  margin-top: 20px;\n"]))),o=n(184),u=function(){return(0,o.jsxs)(i,{children:[(0,o.jsx)("h1",{children:"Welcome!"}),(0,o.jsx)(c.rU,{to:"/tweets",children:"Go to tweets"})]})}}}]);
+//# sourceMappingURL=957.eaf05284.chunk.js.map
