@@ -5,11 +5,11 @@ const tweetsSlice = createSlice({
   name: 'tweets',
   initialState: {
     tweets: [],
-    isLoading: false,
-    error: null,
     subscriptions: [],
-    isFatching: false,
     filteredCards: [],
+    isLoading: false,
+    isFatching: false,
+    error: null,
     page: 1,
   },
   reducers: {
