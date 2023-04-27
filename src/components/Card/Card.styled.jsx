@@ -121,4 +121,8 @@ export const Button = styled(Btn)`
   font-weight: 600;
   font-size: 18px;
   background: ${props => (props.isSubscribe ? '#5CD3A8' : '#EBD8FF')};
+
+  &:hover {
+    color: ${props => (props.isSubscribe ? '#5736a3' : '#5CD3A8')};
+  }
 `;

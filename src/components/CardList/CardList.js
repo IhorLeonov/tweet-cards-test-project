@@ -4,7 +4,7 @@ import { selectFilteredCards } from 'redux/tweets/selectors';
 import { List } from 'components/CardList/CardList.styled';
 
 export const CardList = () => {
-  // const tweets = useSelector(selectTweets);
+  // const tweets = useSelector(selectTweets); // without filtering
   const filteredCards = useSelector(selectFilteredCards);
 
   return (

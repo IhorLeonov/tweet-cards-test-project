@@ -1,17 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
-import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import { lazy, useEffect } from 'react';
+import { SharedLayout } from 'components/SharedLayout/SharedLayout';
+
 import { fetchTweetCards } from 'redux/tweets/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPage } from 'redux/tweets/selectors';
-// import { selectIsFatching } from 'redux/tweets/selectors';
 
 const Home = lazy(() => import('pages/Home/HomePage'));
 const TweetsPage = lazy(() => import('pages/Tweets/TweetsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  // const isFatching = useSelector(selectIsFatching);
   const page = useSelector(selectPage);
 
   useEffect(() => {
