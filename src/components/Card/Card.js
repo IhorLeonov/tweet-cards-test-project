@@ -52,10 +52,10 @@ export const Card = ({ id, props }) => {
       <UserPhotoWrapper>
         <Backdrop>
           {avatar ? (
-            <UserPhoto src={avatar} alt="User photo" />
+            <UserPhoto src={avatar} alt="User photo" width="63" height="63" />
           ) : (
             <DefaultPhoto>
-              <UserPhoto src={boy} alt="User photo" />
+              <UserPhoto src={boy} alt="User photo" width="63" height="63" />
             </DefaultPhoto>
           )}
         </Backdrop>
